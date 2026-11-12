@@ -57,9 +57,19 @@ button, input, select { font: inherit; color: inherit; }
 .mark { width: 42px; height: 42px; flex: none; image-rendering: pixelated; margin-top: 4px; }
 h1 { margin: 0; font: 400 54px/66px var(--display); letter-spacing: 0; }
 .sub { margin: 4px 0 0; font: 500 17px/1.4 var(--text); color: var(--quiet); text-wrap: balance; }
-.links { display: flex; gap: 20px; font: 500 13px/1 var(--mono); letter-spacing: 0.04em; }
+.links { display: flex; gap: 20px; align-items: center; font: 500 13px/1 var(--mono); letter-spacing: 0.04em; }
 .links a { text-decoration: none; color: var(--quiet); padding: 6px 0; border-bottom: 1px solid var(--line); }
 .links a:hover { color: var(--ink); border-color: var(--ink); }
+.lang {
+  border: 1px solid var(--line);
+  background: none;
+  padding: 6px 10px;
+  font: 500 12px/1 var(--mono);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  color: var(--quiet);
+}
+.lang:hover { color: var(--ink); border-color: var(--quiet); }
 
 /* bar */
 .bar {

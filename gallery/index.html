@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -17,27 +17,28 @@
     <svg class="mark" viewBox="0 0 7 7" shape-rendering="crispEdges" role="img" aria-label="Patch"><rect x="1" y="1" width="6" height="6" fill="#ffffff"/><rect x="0" y="0" width="3" height="3" fill="#f53cd1"/></svg>
     <div>
       <h1>pixelfx.</h1>
-      <p class="sub"><span id="count">0</span> pixel art effects, every one a small piece of code.</p>
+      <p class="sub"><span id="count">0</span> <span id="sub-text">个像素特效，每一个都是一小段代码。</span></p>
     </div>
   </div>
   <nav class="links">
-    <a href="https://github.com/patch-gg/pixelfx" target="_blank" rel="noopener">github</a>
-    <a href="https://github.com/patch-gg/pixelfx#the-skill" target="_blank" rel="noopener">claude code skill</a>
-    <a href="https://patch.gg" target="_blank" rel="noopener">patch.gg</a>
+    <button class="lang" id="lang" type="button" aria-label="切换到英文">EN</button>
+    <a id="link-github" href="https://github.com/patch-gg/pixelfx" target="_blank" rel="noopener">GitHub</a>
+    <a id="link-skill" href="https://github.com/patch-gg/pixelfx#the-skill" target="_blank" rel="noopener">Claude 技能</a>
+    <a id="link-patch" href="https://patch.gg" target="_blank" rel="noopener">patch.gg</a>
   </nav>
 </header>
 <div class="bar">
   <div class="bar-in">
-    <div class="chips" id="chips" role="toolbar" aria-label="Categories"></div>
-    <input id="q" type="search" placeholder="search" aria-label="Search effects" autocomplete="off">
+    <div class="chips" id="chips" role="toolbar" aria-label="分类"></div>
+    <input id="q" type="search" placeholder="搜索" aria-label="搜索特效" autocomplete="off">
   </div>
 </div>
 <main id="grid"></main>
-<p class="empty" id="none" hidden>Nothing matches that. Try fire, slash or loop.</p>
+<p class="empty" id="none" hidden>没有匹配结果。试试「火焰」「斩击」或「循环」。</p>
 <dialog class="detail" id="detail" aria-labelledby="d-name">
   <div class="sheet">
     <div>
-      <div class="big"><canvas id="big"></canvas><button class="close" id="d-close" type="button">close</button></div>
+      <div class="big"><canvas id="big"></canvas><button class="close" id="d-close" type="button">关闭</button></div>
     </div>
     <div class="info">
       <h2 id="d-name"></h2>
@@ -45,12 +46,12 @@
       <p id="d-desc"></p>
       <dl class="facts" id="d-facts"></dl>
       <div class="controls">
-        <div class="row"><label>play</label><button class="btn" id="d-play" type="button">pause</button><button class="btn" id="d-again" type="button">again</button><span id="d-speed" class="row"></span></div>
-        <div class="row"><label>backdrop</label><span id="d-bg" class="row"></span></div>
-        <div class="row"><label>palette</label><select class="btn" id="d-pal" aria-label="Palette"></select><button class="btn" id="d-seed" type="button">new seed</button></div>
-        <div class="row"><label>show</label><button class="btn" id="d-flip" type="button">mirror</button><button class="btn" id="d-actor" type="button">character</button><button class="btn" id="d-make" type="button">sprite sheet</button></div>
+        <div class="row"><label id="lbl-play">播放</label><button class="btn" id="d-play" type="button">暂停</button><button class="btn" id="d-again" type="button">重播</button><span id="d-speed" class="row"></span></div>
+        <div class="row"><label id="lbl-backdrop">背景</label><span id="d-bg" class="row"></span></div>
+        <div class="row"><label id="lbl-palette">色板</label><select class="btn" id="d-pal" aria-label="色板"></select><button class="btn" id="d-seed" type="button">换随机种子</button></div>
+        <div class="row"><label id="lbl-show">显示</label><button class="btn" id="d-flip" type="button">镜像</button><button class="btn" id="d-actor" type="button">角色</button><button class="btn" id="d-make" type="button">精灵表</button></div>
       </div>
-      <div class="code-head"><span>use it</span><span><a id="d-src" target="_blank" rel="noopener">source</a> · <button class="btn" id="d-copy" type="button">copy</button></span></div>
+      <div class="code-head"><span id="lbl-use">如何使用</span><span><a id="d-src" target="_blank" rel="noopener">源码</a> · <button class="btn" id="d-copy" type="button">复制</button></span></div>
       <pre id="d-code"></pre>
     </div>
     <div class="sheetout" id="d-sheet"></div>
